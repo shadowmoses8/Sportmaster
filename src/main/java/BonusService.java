@@ -1,12 +1,15 @@
 public class BonusService {
 
     public int calculateBonus(int accumulatedAmount, int purchaseAmount) {
-        if (accumulatedAmount <= 15_000) {
+        int maxAmountForBlueCard = 15_000;
+        int maxAmountForSilverCard = 150_000;
+
+        if (accumulatedAmount <= maxAmountForBlueCard) {
             int purchaseBonus = 50;
             int asManyAsThousands = purchaseAmount / 1000;
             return purchaseBonus * asManyAsThousands;
         }
-        if (accumulatedAmount <= 150_000) {
+        if (accumulatedAmount <= maxAmountForSilverCard) {
             int purchaseBonus = 70;
             int asManyAsThousands = purchaseAmount / 1000;
             return purchaseBonus * asManyAsThousands;
